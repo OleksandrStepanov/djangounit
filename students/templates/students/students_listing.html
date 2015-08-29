@@ -28,16 +28,17 @@
       <div class = "row" id = "sub-header">
         <div class = "col-xs-12">
           <ul class = "nav nav-tabs"role="tablist">
-            <li role="presentation" class = "active"><a href="#">Студенти</a></li>
-            <li role="presentation"><a href = "#">Відвідування</a></li>
-            <li role="presentation"><a href = "#">Групи</a></li>
+            <li role="presentation" class = "active"><a href="{% url "home" %}">Студенти</a></li>
+            <li role="presentation"><a href = "/journal">Відвідування</a></li>
+            <li role="presentation"><a href = "{% url "groups" %}">Групи</a></li>
           </ul>
         </div>
       </div>
       <div class = "row" id = "content-columns">
         <div class = "col-xs-12" id = "content-columns">
           <div class ="alert alert-warning">Зміни скасовано.</div>
-          <h2>База Студентів<a class ="btn btn-primary" href="#">Додати Студента</a></h2>
+          <h2>База Студентів</h2>
+          <a class ="btn btn-primary" href="{% url "students_add" %}">Додати Студента</a>
           
           <div>
             <table class="table table-hover table-striped">
@@ -55,19 +56,19 @@
                <tr>
                 <td>1</td>
                 <td><img height="30" width="30"src="./img/1.jpg"class="img-circle"></td>
-                <td><a title="Редагувати"href="#">Малярчук</a></td>
-                <td><a title="Редагувати"href="#">Андрій</a></td>
+                <td><a title="Редагувати"href="{% url "students_edit" 1 %}">Малярчук</a></td>
+                <td><a title="Редагувати"href="{% url "students_edit" 1 %}">Андрій</a></td>
                 <td>220</td>
                 <td>
                     <div class="dropdown">
                       <button class="btn btn-default dropdown-toggle"type="button"data-toggle="dropdown">Дія<span class="caret"></span></button>
                        <ul class="dropdown-menu"role="menu">
                         <li role = "presentation">
-                         <a role = "menuitem"tabindex="-1" href="#">Відвідування</a></li>
+                         <a role = "menuitem"tabindex="-1" href="/journal/1">Відвідування</a></li>
                         <li role = "presentation">
-                         <a role = "menuitem"tabindex="-1" href ="#">Редагувати</a></li>
+                         <a role = "menuitem"tabindex="-1" href ="{% url "students_edit" 1 %}">Редагувати</a></li>
                         <li role = "presentation">
-                         <a role = "menuitem"tabindex="-1" href ="#">Видалити</a></li>
+                         <a role = "menuitem"tabindex="-1" href ="{% url "students_delete" 1 %}">Видалити</a></li>
                        </ul>
                     </div>
                 </td>
@@ -75,19 +76,19 @@
                <tr>
                 <td>2</td>
                 <td><img height="30" width="30"src="./img/2.jpg"class="img-circle"></td>
-                <td><a title="Редагувати"href="#">Чепелюк</a></td>
-                <td><a title="Редагувати"href="#">Юрій</a></td>
+                <td><a title="Редагувати"href="{% url "students_edit" 2 %}">Чепелюк</a></td>
+                <td><a title="Редагувати"href="{% url "students_edit" 2 %}">Юрій</a></td>
                 <td>203</td>
                 <td>
                     <div class="dropdown">
                       <button class="btn btn-default dropdown-toggle"type="button"data-toggle="dropdown">Дія<span class="caret"></span></button>
                        <ul class="dropdown-menu"role="menu">
                         <li role = "presentation">
-                         <a role = "menuitem"tabindex="-1" href="#">Відвідування</a></li>
+                         <a role = "menuitem"tabindex="-1" href="/journal/2">Відвідування</a></li>
                         <li role = "presentation">
-                         <a role = "menuitem"tabindex="-1" href ="#">Редагувати</a></li>
+                         <a role = "menuitem"tabindex="-1" href ="{% url "students_edit" 2 %}">Редагувати</a></li>
                         <li role = "presentation">
-                         <a role = "menuitem"tabindex="-1" href ="#">Видалити</a></li>
+                         <a role = "menuitem"tabindex="-1" href ="{% url "students_delete" 2 %}">Видалити</a></li>
                        </ul>
                     </div>
                 </td>
@@ -95,19 +96,19 @@
                <tr>
                 <td>3</td>
                 <td><img height="30" width="30"src="./img/3.jpg"class="img-circle"></td>
-                <td><a title="Редагувати"href="#">Попов</a></td>
-                <td><a title="Редагувати"href="#">Сергій</a></td>
+                <td><a title="Редагувати"href="{% url "students_edit" 3 %}">Попов</a></td>
+                <td><a title="Редагувати"href="{% url "students_edit" 3 %}">Сергій</a></td>
                 <td>301</td>
                 <td>
                     <div class="dropdown">
                       <button class="btn btn-default dropdown-toggle"type="button"data-toggle="dropdown">Дія<span class="caret"></span></button>
                        <ul class="dropdown-menu"role="menu">
                         <li role = "presentation">
-                         <a role = "menuitem"tabindex="-1" href="#">Відвідування</a></li>
+                         <a role = "menuitem"tabindex="-1" href="/journal/3">Відвідування</a></li>
                         <li role = "presentation">
-                         <a role = "menuitem"tabindex="-1" href ="#">Редагувати</a></li>
+                         <a role = "menuitem"tabindex="-1" href ="{% url "students_edit" 3 %}">Редагувати</a></li>
                         <li role = "presentation">
-                         <a role = "menuitem"tabindex="-1" href ="#">Видалити</a></li>
+                         <a role = "menuitem"tabindex="-1" href ="{% url "students_delete" 3 %}">Видалити</a></li>
                        </ul>
                     </div>
                 </td>

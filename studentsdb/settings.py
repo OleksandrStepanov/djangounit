@@ -64,6 +64,9 @@ DATABASES = {
     }
 }
 
+#TEMPLATE_DIRS = (
+#    os.path.join(BASE_DIR, 'students', 'template'),
+#) 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
