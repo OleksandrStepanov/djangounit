@@ -8,38 +8,33 @@
 
 {% block content %}
 
-<a class ="btn btn-primary" href="{% url "students_add" %}">Додати Студента</a>
+<a class ="btn btn-primary" href="{% url "students_add" %}">Додати Групу</a>
           
           <div>
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
                   <th><a href =" ">№</a></th>
-                  <th>Фото</th>
-                  <th><a href=" ">Прізвище &uarr;</a></th>
-                  <th><a href="#">Ім'я</a></th>
-                  <th><a href="#">№ Білету</a></th>
+                  <th><a href=" ">Назва Групи &uarr;</a></th>
+                  <th><a href="#">Староста</a></th>
                   <th>Дії</th>
                 </tr>
               </thead>
               <tbody>
-               {% for student in students %}
+               {% for group in groups %}
                <tr>
                 <td>{{ forloop.counter }}</td>
-                <td><img height="30" width="30"src="{% static student.image %}"class="img-circle"></td>
-                <td><a title="Редагувати"href="{% url "students_edit" student.id %}">{{ student.last_name }}</td>
-                <td><a title="Редагувати"href="{% url "students_edit" student.id %}">{{ student.first_name }}</td>
-                <td>{{ student.ticket }}</td>
+                <td><a title="Редагувати"href="{% url "groups_edit" group.id %}">{{ group.group_name }}</td>
+                <td><a title="Редагувати"href="{% url "students_edit" group.leader.id %}">{{ group.leader.group_name }}</td>
+                
                 <td>
                     <div class="dropdown">
                       <button class="btn btn-default dropdown-toggle"type="button"data-toggle="dropdown">Дія<span class="caret"></span></button>
                        <ul class="dropdown-menu"role="menu">
                         <li role = "presentation">
-                         <a role = "menuitem"tabindex="-1" href="{% url "journal" %}">Відвідування</a></li>
+                         <a role = "menuitem"tabindex="-1" href ="{% url "groups_edit" group.id %}">Редагувати</a></li>
                         <li role = "presentation">
-                         <a role = "menuitem"tabindex="-1" href ="{% url "students_edit" student.id %}">Редагувати</a></li>
-                        <li role = "presentation">
-                         <a role = "menuitem"tabindex="-1" href ="{% url "students_delete" student.id %}">Видалити</a></li>
+                         <a role = "menuitem"tabindex="-1" href ="{% url "groups_delete" group.id %}">Видалити</a></li>
                        </ul>
                     </div>
                 </td>
